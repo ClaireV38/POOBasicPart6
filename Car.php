@@ -15,9 +15,6 @@ class Car extends Vehicle
 	  * @var string
 	  */
 	private $energy;
-	  /**
-      * @return string
-      */
 
 	  /**
 	  * @var integer
