@@ -22,13 +22,9 @@ class Car extends Vehicle
      */
     private $energyLevel;
 
-     /**
+    /**
      * @param string $color
      */
-    public function setEnergyLevel(int $energyLevel): void
-    {
-        $this->energyLevel = $energyLevel;
-    }
 
     /**
      * @var bool
@@ -80,6 +76,9 @@ class Car extends Vehicle
         return $sentence;
     }
 
+    /**
+     * @return string
+     */
     public function getEnergy(): string
     {
         return $this->energy;
@@ -93,18 +92,21 @@ class Car extends Vehicle
         return $this;
     }
 
+    public function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
 
-            /**
-             * @return integer
-             */
-            public function getEnergyLevel(): int
-            {
-                return $this->energyLevel;
-            }
+    /**
+     * @return integer
+     */
+    public function getEnergyLevel(): int
+    {
+        return $this->energyLevel;
+    }
 
 
-
-            public function setParkBrake($hasParkBrake): Car
+    public function setParkBrake($hasParkBrake): Car
     {
         $this->hasParkBrake = $hasParkBrake;
         return $this;
