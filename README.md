@@ -1,1 +1,1 @@
-creation of a new class : Truck children of Vehicule class with attrubutes and methods inherited and other self attributes and methods
+creation of excpetions in method start of car class ans handling exception in index
