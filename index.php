@@ -12,44 +12,64 @@ require_once 'MotorWay.php';
 require_once 'ResidentialWay.php';
 require_once 'PedestrianWay.php';
 require_once 'Skateboard.php';
+require_once 'Bike.php';
 
 
 $alfa = new Car('grey',4,'fuel');
 $alfa->setParkBrake(true);
 var_dump($alfa);
 
-try {
-    echo $alfa->start();
-} catch (NoMoreEnergyException $e){
-    echo "Exception received  : ". $e->getMessage() . "<br/>";
-    $alfa->setEnergyLevel(30);
-} catch (Exception $e){
-    // code to manage exceptions
-    echo "Exception received  : ". $e->getMessage() . "<br/>";
-    $alfa->setParkBrake(false);
-} finally{
-    try {
-        echo $alfa->start();
-    } catch (NoMoreEnergyException $e){
-        echo "Exception received  : ". $e->getMessage() . "<br/>";
-        $alfa->setEnergyLevel(30);
-    } catch (Exception $e){
-        // code to manage exceptions
-        echo "Exception received  : ". $e->getMessage() . "<br/>";
-        $alfa->setParkBrake(false);
-    } finally {
-        echo "Ma voiture roule comme un donut";
-    }
-}
-
-
 var_dump($alfa);
 
+$islightOn = $alfa->switchOn();
+if ($islightOn)
+    echo "la lumière est allumée <br>";
+else
+    echo "la lumière est éteinte <br>";
 
-$A7 = new MotorWay();
-var_dump($A7);
-$A7->addVehicle($twingo = new Car('green',4,'fuel'));
-$A7->addVehicle($master = new Truck('white',3,'fuel',50));
-var_dump($A7);
+$islightOn = $alfa->switchOff();
+if ($islightOn)
+    echo "la lumière est allumée <br>";
+else
+    echo "la lumière est éteinte <br>";
+
+
+$btween = new Bike('black',1);
+var_dump($btween);
+try {
+    $islightOn = $btween->switchOn();
+} catch (Exception $e)
+{
+    echo "Exception received  : ". $e->getMessage() . "<br/>";
+}
+if ($islightOn)
+    echo "la lumière est allumée <br>";
+else
+    echo "la lumière est éteinte <br>";
+
+
+$btween->forward();
+var_dump($btween);
+try {
+    $islightOn = $btween->switchOn();
+} catch (Exception $e)
+{
+    echo "Exception received  : ". $e->getMessage() . "<br/>";
+}
+if ($islightOn)
+    echo "la lumière est allumée <br>";
+else
+    echo "la lumière est éteinte <br>";
+
+$islightOn = $btween->switchOff();
+if ($islightOn)
+    echo "la lumière est allumée <br>";
+else
+    echo "la lumière est éteinte <br>";
+
+
+
+
+
 
 
