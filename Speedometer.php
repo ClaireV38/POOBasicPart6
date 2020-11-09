@@ -13,7 +13,7 @@ class Speedometer
      * coef miles to km
      * @var float
      */
-    const COEF_MILES_TO_KM = 1.60934;
+    const COEF_MILES_TO_KM = 1 / self::COEF_KM_TO_MILES;
 
     /**
      * convert distance in km to miles
