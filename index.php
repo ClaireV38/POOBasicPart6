@@ -13,59 +13,15 @@ require_once 'ResidentialWay.php';
 require_once 'PedestrianWay.php';
 require_once 'Skateboard.php';
 require_once 'Bike.php';
+require_once 'Speedometer.php';
+
+$distanceInKm = 10 ;
+$distanceInMiles =6.21;
+
+echo "{$distanceInKm} km correspond à " . Speedometer::convertKmToMiles($distanceInKm) . "  Miles <br>";
+echo "{$distanceInMiles} Miles correspond à " . Speedometer::convertMilesToKm($distanceInMiles) . " km <br>";
 
 
-$alfa = new Car('grey',4,'fuel');
-$alfa->setParkBrake(true);
-var_dump($alfa);
-
-var_dump($alfa);
-
-$islightOn = $alfa->switchOn();
-if ($islightOn)
-    echo "la lumière est allumée <br>";
-else
-    echo "la lumière est éteinte <br>";
-
-$islightOn = $alfa->switchOff();
-if ($islightOn)
-    echo "la lumière est allumée <br>";
-else
-    echo "la lumière est éteinte <br>";
-
-
-$btween = new Bike('black',1);
-var_dump($btween);
-try {
-    $islightOn = $btween->switchOn();
-} catch (Exception $e)
-{
-    echo "Exception received  : ". $e->getMessage() . "<br/>";
-}
-if ($islightOn)
-    echo "la lumière est allumée <br>";
-else
-    echo "la lumière est éteinte <br>";
-
-
-$btween->forward();
-var_dump($btween);
-try {
-    $islightOn = $btween->switchOn();
-} catch (Exception $e)
-{
-    echo "Exception received  : ". $e->getMessage() . "<br/>";
-}
-if ($islightOn)
-    echo "la lumière est allumée <br>";
-else
-    echo "la lumière est éteinte <br>";
-
-$islightOn = $btween->switchOff();
-if ($islightOn)
-    echo "la lumière est allumée <br>";
-else
-    echo "la lumière est éteinte <br>";
 
 
 
