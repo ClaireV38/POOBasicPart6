@@ -1,1 +1,1 @@
-creation of excpetions in method start of car class ans handling exception in index
+creation of converter km to miles and miles to km using static method of Speedometer class
